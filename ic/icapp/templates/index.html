@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IC Design Club</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f7f9fc, #d1e7dd, #cfe2ff); /* Gradient background */
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #1b1b1b; /* Black */
+            color: #e5f7e1; /* Soft Green */
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeInDown 1s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: #28a745; /* Green */
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #1b1b1b; /* Black */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #155724; /* Darker Green */
+        }
+
+        .hero {
+            background-image: url('https://plus.unsplash.com/premium_photo-1683121716061-3faddf4dc504?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: #e5f7e1; /* Soft Green */
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInBg 2s ease 1s forwards; /* Background image fade-in with delay */
+            opacity: 0; /* Start hidden */
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInText 1.5s ease 2s forwards; /* Text fade-in with delay */
+            opacity: 0; /* Start hidden */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .activities {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .activity-box {
+            background-color: #e5f7e1; /* Soft Green */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            animation: fadeInUp 1s ease 3s forwards; /* Activity boxes fade-in with delay */
+            opacity: 0; /* Start hidden */
+        }
+
+        .activity-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .activity-box h3 {
+            margin-top: 0;
+            color: #1b1b1b; /* Black */
+        }
+
+        .activity-box p {
+            color: #3c3c3c; /* Dark Gray */
+        }
+
+        .info-section {
+            background-color: #1b1b1b; /* Black */
+            color: #e5f7e1; /* Soft Green */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 40px;
+            animation: fadeInLeft 1s ease 4s forwards; /* Info section fade-in with delay */
+            opacity: 0; /* Start hidden */
+        }
+
+        .info-section h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #1b1b1b; /* Black */
+            color: #e5f7e1; /* Soft Green */
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease 5s forwards; /* Footer fade-in with delay */
+            opacity: 0; /* Start hidden */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInBg {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IC Design Club</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/events">Events</a></li>
+        <li><a href="/members">Members</a></li>
+        <li><a href="#">Join</a></li>
+        <li><a href="/aboutus">About Us</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Empowering the Future of IC Design</h2>
+</section>
+
+<div class="container">
+    <section class="info-section">
+        <h3>Recents</h3>
+        <p>The IC Design Club is dedicated to fostering knowledge and skills in integrated circuit design among students. We organize workshops, competitions, and networking events to empower our members and connect them with industry professionals.</p>
+    </section>
+
+    <section class="activities">
+        <div class="activity-box">
+            <h3>Workshops</h3>
+            <p>Hands-on training sessions with industry experts to enhance your skills.</p>
+        </div>
+        <div class="activity-box">
+            <h3>Competitions</h3>
+            <p>Participate in design challenges and hackathons to test your knowledge.</p>
+        </div>
+        <div class="activity-box">
+            <h3>Networking</h3>
+            <p>Connect with professionals and peers to grow your network in IC design.</p>
+        </div>
+    </section>
+</div>
+
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    <p>&copy; 2024 IC Design Club, NIE Mysore. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IC Design Club - About Us</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f7f9fc, #d1e7dd, #cfe2ff); /* Gradient background */
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #1b1b1b; /* Black */
+            color: #e5f7e1; /* Soft Green */
+            padding: 20px 0;
+            text-align: center;
+            animation: fadeInDown 1.5s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            background-color: #28a745; /* Green */
+            color: #fff;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #1b1b1b; /* Black */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #155724; /* Darker Green */
+            transform: scale(1.1);
+        }
+
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://plus.unsplash.com/premium_photo-1683121716061-3faddf4dc504?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            color: #e5f7e1; /* Soft Green */
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            animation: slideInLeft 1.5s ease-in-out;
+        }
+
+        .about-text {
+            flex-basis: 60%;
+            padding: 20px;
+            color: #3c3c3c; /* Dark Gray */
+        }
+
+        .about-text h3 {
+            margin-top: 0;
+            color: #1b1b1b; /* Black */
+            font-size: 1.8em;
+        }
+
+        .about-text p {
+            line-height: 1.5;
+            margin-bottom: 15px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .about-img {
+            flex-basis: 40%;
+            background-image: url('https://images.unsplash.com/photo-1571700750079-0a9318e54f04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            animation: fadeInRight 1.5s ease-in-out;
+        }
+
+        .about-img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #1b1b1b; /* Black */
+            color: #e5f7e1; /* Soft Green */
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IC Design Club</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/contact/">Contact</a></li>
+    </ul>
+</nav>
+
+<div class="hero">
+    <h2>Welcome to the IC Design Club</h2>
+</div>
+
+<div class="container">
+    <section class="about-section">
+        <div class="about-text">
+            <h3>About Us</h3>
+            <p>The IC Design Club is dedicated to fostering a community of electronics and computer engineering enthusiasts. Our goal is to promote learning, collaboration, and innovation in the fields of integrated circuit design, robotics, and embedded systems.</p>
+            <p>We organize workshops, seminars, and hands-on projects to help our members develop practical skills and gain experience in designing and implementing cutting-edge technology. Whether you're a beginner or an experienced engineer, you'll find a welcoming environment to explore your interests and advance your knowledge.</p>
+            <p>Join us today and be part of a vibrant community that is passionate about technology and engineering!</p>
+        </div>
+        <div class="about-img"></div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2024 IC Design Club. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

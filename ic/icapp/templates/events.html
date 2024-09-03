@@ -1,0 +1,128 @@
+{% extends 'index.html' %}
+
+{% block title %}IC Design Club - Events{% endblock %}
+
+{% block content %}
+<section class="events-section">
+    <h2>Done Events</h2>
+    <div class="events-container">
+        {% for event in done_events %}
+        <div class="event" onclick="location.href='{% url 'event_detail' event.id %}'">
+            <div class="event-images">
+                {% for image in event.images.all %}
+                <img src="{{ image.image.url }}" alt="{{ event.title }}" class="event-image">
+                {% endfor %}
+            </div>
+            <h3>{{ event.title }}</h3>
+            <p class="event-date-time">
+                Date: {{ event.date|date:"F j, Y" }}<br>
+                Time: {{ event.date|time:"g:i A" }}
+            </p>
+            <p class="event-description">{{ event.description }}</p>
+        </div>
+        {% empty %}
+        <p>No done events available.</p>
+        {% endfor %}
+    </div>
+
+    <h2>Upcoming Events</h2>
+    <div class="events-container">
+        {% for event in upcoming_events %}
+        <div class="event" onclick="location.href='{% url 'event_detail' event.id %}'">
+            <div class="event-images">
+                {% for image in event.images.all %}
+                <img src="{{ image.image.url }}" alt="{{ event.title }}" class="event-image">
+                {% endfor %}
+            </div>
+            <h3>{{ event.title }}</h3>
+            <p class="event-date-time">
+                Date: {{ event.date|date:"F j, Y" }}<br>
+                Time: {{ event.date|time:"g:i A" }}
+            </p>
+            <p class="event-description">{{ event.description }}</p>
+        </div>
+        {% empty %}
+        <p>No upcoming events available.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+    .events-section {
+        padding: 20px;
+        margin: 0 auto;
+        max-width: 1200px;
+        background: linear-gradient(135deg, #d1e7dd, #cfe2ff); /* Gradient background */
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .events-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
+    .event {
+        flex: 1 1 calc(33.33% - 20px); /* Responsive width */
+        margin: 10px;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for contrast */
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        text-align: center;
+        position: relative;
+    }
+
+    .event:hover {
+        transform: scale(1.05);
+    }
+
+    .event-images {
+        display: flex;
+        overflow: hidden;
+        position: relative;
+        height: 200px; /* Fixed height for images */
+    }
+
+    .event-image {
+        flex: 1;
+        height: 100%;
+        object-fit: cover; /* Cover to maintain aspect ratio */
+        transition: transform 0.3s ease;
+    }
+
+    .event-image:hover {
+        transform: scale(1.1); /* Zoom effect on hover */
+    }
+
+    .event h3 {
+        margin: 10px 0;
+        color: #1b1b1b; /* Darker text for titles */
+    }
+
+    .event-date-time {
+        color: #3c3c3c; /* Dark Gray */
+        padding: 0 10px;
+        font-size: 0.9em; /* Smaller text for date and time */
+    }
+
+    .event-description {
+        color: #3c3c3c; /* Dark Gray */
+        padding: 0 10px 15px;
+        font-size: 1.1em; /* Larger text for description */
+    }
+
+    h2 {
+        color: #1b1b1b; /* Darker text for headings */
+        margin-top: 40px;
+        text-align: center;
+        font-size: 2em;
+        border-bottom: 2px solid #28a745; /* Green underline */
+        padding-bottom: 10px;
+    }
+</style>
+
+{% endblock %}

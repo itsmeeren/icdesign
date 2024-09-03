@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ event.title }} - IC Design Club{% endblock %}
+
+{% block content %}
+<section class="event-detail">
+    <h2>{{ event.title }}</h2>
+    <p><strong>Date:</strong> {{ event.date|date:"F j, Y" }}</p>
+    <p><strong>Description:</strong></p>
+    <p>{{ event.description }}</p>
+
+    <h3>Event Images</h3>
+    <div class="event-images">
+        {% for image in event.images.all %}
+        <img src="{{ image.image.url }}" alt="Image for {{ event.title }}">
+        {% empty %}
+        <p>No images available for this event.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<style>
+    .event-detail {
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .event-images {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .event-images img {
+        max-width: 100%;
+        height: auto;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
+{% endblock %}
